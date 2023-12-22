@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Автоклуб LOGO YO</title>
+</head>
+<body class="page">
+	<header class="header">
+		<nav class="header__nav">
+			<a class="header__logo" href="/">
+				<img src="" alt="Логотип автоклуба LOGO YO" width="167.61" height="19.07">
+			</a>
+			<ul class="main-menu">
+				<li class="main-menu__item">
+					<a class="main-menu__item-link" href="">
+						Автомобили
+					</a>
+				</li>
+				<li class="main-menu__item">
+					<a class="main-menu__item-link" href="">
+						Покупка авто
+					</a>
+				</li>
+				<li class="main-menu__item">
+					<a class="main-menu__item-link" href="">
+						Личная охрана
+					</a>
+				</li>
+				<li class="main-menu__item">
+					<a class="main-menu__item-link" href="">
+						Клубные карты
+					</a>
+				</li>
+			</ul>
+			<!-- 
+				Принимаю решение иконки социальных сетей делать с помощью svg для возможности изменения через css 
+			-->
+			<address class="header__address">
+				<ul class="socials">
+					<li class="socials-item">
+						<a class="socials-item-link" href="">
+							<svg class="telegram-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+								<path d="M20 3.33325C10.8 3.33325 3.33334 10.7999 3.33334 19.9999C3.33334 29.1999 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.1999 36.6667 19.9999C36.6667 10.7999 29.2 3.33325 20 3.33325ZM27.7333 14.6666C27.4833 17.2999 26.4 23.6999 25.85 26.6499C25.6167 27.8999 25.15 28.3166 24.7167 28.3666C23.75 28.4499 23.0167 27.7333 22.0833 27.1166C20.6167 26.1499 19.7833 25.5499 18.3667 24.6166C16.7167 23.5333 17.7833 22.9333 18.7333 21.9666C18.9833 21.7166 23.25 17.8333 23.3333 17.4833C23.3449 17.4302 23.3434 17.3752 23.3289 17.3229C23.3143 17.2706 23.2873 17.2227 23.25 17.1833C23.15 17.0999 23.0167 17.1333 22.9 17.1499C22.75 17.1833 20.4167 18.7333 15.8667 21.7999C15.2 22.2499 14.6 22.4833 14.0667 22.4666C13.4667 22.4499 12.3333 22.1333 11.4833 21.8499C10.4333 21.5166 9.61668 21.3333 9.68334 20.7499C9.71668 20.4499 10.1333 20.1499 10.9167 19.8333C15.7833 17.7166 19.0167 16.3166 20.6333 15.6499C25.2667 13.7166 26.2167 13.3833 26.85 13.3833C26.9833 13.3833 27.3 13.4166 27.5 13.5833C27.6667 13.7166 27.7167 13.8999 27.7333 14.0333C27.7167 14.1333 27.75 14.4333 27.7333 14.6666Z" fill="black"/>
+							</svg>
+						</a>
+					</li>
+					<li class="socials-item">
+						<a class="socials-item-link" href="">
+							<svg class="instagram-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+								<path d="M13 3.33325H27C32.3333 3.33325 36.6667 7.66659 36.6667 12.9999V26.9999C36.6667 29.5637 35.6482 32.0224 33.8354 33.8353C32.0225 35.6481 29.5638 36.6666 27 36.6666H13C7.66668 36.6666 3.33334 32.3333 3.33334 26.9999V12.9999C3.33334 10.4362 4.35179 7.9774 6.16464 6.16455C7.9775 4.3517 10.4363 3.33325 13 3.33325ZM12.6667 6.66659C11.0754 6.66659 9.54925 7.29873 8.42404 8.42394C7.29882 9.54916 6.66668 11.0753 6.66668 12.6666V27.3333C6.66668 30.6499 9.35001 33.3333 12.6667 33.3333H27.3333C28.9246 33.3333 30.4508 32.7011 31.576 31.5759C32.7012 30.4507 33.3333 28.9245 33.3333 27.3333V12.6666C33.3333 9.34992 30.65 6.66659 27.3333 6.66659H12.6667ZM28.75 9.16658C29.3025 9.16658 29.8324 9.38608 30.2232 9.77678C30.6139 10.1675 30.8333 10.6974 30.8333 11.2499C30.8333 11.8025 30.6139 12.3324 30.2232 12.7231C29.8324 13.1138 29.3025 13.3333 28.75 13.3333C28.1975 13.3333 27.6676 13.1138 27.2769 12.7231C26.8862 12.3324 26.6667 11.8025 26.6667 11.2499C26.6667 10.6974 26.8862 10.1675 27.2769 9.77678C27.6676 9.38608 28.1975 9.16658 28.75 9.16658ZM20 11.6666C22.2101 11.6666 24.3298 12.5446 25.8926 14.1074C27.4554 15.6702 28.3333 17.7898 28.3333 19.9999C28.3333 22.2101 27.4554 24.3297 25.8926 25.8925C24.3298 27.4553 22.2101 28.3333 20 28.3333C17.7899 28.3333 15.6703 27.4553 14.1075 25.8925C12.5447 24.3297 11.6667 22.2101 11.6667 19.9999C11.6667 17.7898 12.5447 15.6702 14.1075 14.1074C15.6703 12.5446 17.7899 11.6666 20 11.6666ZM20 14.9999C18.6739 14.9999 17.4022 15.5267 16.4645 16.4644C15.5268 17.4021 15 18.6738 15 19.9999C15 21.326 15.5268 22.5978 16.4645 23.5355C17.4022 24.4731 18.6739 24.9999 20 24.9999C21.3261 24.9999 22.5979 24.4731 23.5355 23.5355C24.4732 22.5978 25 21.326 25 19.9999C25 18.6738 24.4732 17.4021 23.5355 16.4644C22.5979 15.5267 21.3261 14.9999 20 14.9999Z" fill="black"/>
+							</svg>
+						</a>
+					</li>
+				</ul>
+			</address>
+			<!-- 
+				Кнопка "Связаться с нами" размечена тегом button, так как предполагаю, что по нажатию будет открываться модальное окно, ведь на странице форм у нас нет 
+			-->
+			<button class="header__nav-button-connect" type="button">
+				Связаться с нами
+			</button>
+		</nav>
+	</header>
+	<main class="main">
+		<section class="section-main">
+			<h1 class="section-main__title">
+				Стань частью клуба LOGO YO
+			</h1>
+			<p class="section-main__description">
+				Узнайте о преимуществах наших Клубных карт для аренды авто. Эксклюзивные предложения, бесплатные дни и многое другое ждут вас. Присоединяйтесь к клубу уже сегодня!
+			</p>
+			<!-- 
+				Кнопка "Выбрать карту" размена тегом a, так как предполагается использовать якорь к секции с выбором подходящей карты 
+			-->
+			<a class="section-main__button-action" href="#">
+				Выбрать карту
+			</a>
+			<!-- 
+				Принимаю решение, что карточки надо делать с помощью css, чтобы создать себе возможность для экспериментов с анимациями и изменять цвет типов карт из css, а не путем создания нового изображения, поэтому размечаю карточки пустыми контейнерами.
+
+				Каждая карта - это уникальный продукт со своей ценой, характеристиками. В случае верстки многостраничного сайта, где для каждой карты есть своя отдельная страница - на главной я бы верстал каждую карту как article (Но не в главной секции, так как тут я считаю, что карты - это визуальное оформление. В случае коммерческого заказа - согласовал бы этот вопрос)
+			 -->
+			<ul class="section-main__cards">
+				<li class="section-main__card">
+					<div class="card-face">
+						<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+						<div class="card-face__name">
+							Efrosin Tarasov
+						</div>
+						<div class="card-face__type">
+							Premium
+						</div>
+						<div class="card-face__back"></div>
+					</div>
+				</li>
+				<li class="section-main__card">
+					<div class="card-face">
+						<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+						<div class="card-face__name">
+							Anastasiya Zaytseva
+						</div>
+						<div class="card-face__type">
+							Gold
+						</div>
+						<div class="card-face__back"></div>
+					</div>
+				</li>
+				<li class="section-main__card">
+					<div class="card-face">
+						<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+						<div class="card-face__name">
+							Sveta Kovaleva
+						</div>
+						<div class="card-face__type">
+							Silver
+						</div>
+						<div class="card-face__back"></div>
+					</div>
+				</li>
+				<li class="section-main__card">
+					<div class="card-face">
+						<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+						<div class="card-face__name">
+							Pyotr Kuznetsov
+						</div>
+						<div class="card-face__type">
+							Standart
+						</div>
+						<div class="card-face__back"></div>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section class="section-conditions">
+			<h2 class="section-conditions__title">
+				Персональные условия по тарифам только для владельцев клубной карты
+			</h2>
+			<!-- 
+				Карточки автомобилей это четкое коммерческое предложение. В случае, если бы это был многостраничный сайт, то логично было бы для каждого автомобиля делать отдельную страницу с подробной информацией, тогда карточку я упаковывал бы в тег article, но так как мы делаем лендинг и основной продукт карты клуба - принимаю решение верстать карточки автомобилей без использования article и не упаковывать карточки в тег a.
+			-->
+			<ul class="section-conditions__cars">
+				<li class="section-conditions__cars-item">
+					<div class="card-car">
+						<h3 class="card-car__title">
+							Rolls-Royce Wraith
+						</h3>
+						<img class="card-car__img" width="261" height="164" src="" alt="Аренда Rolls-Royce Wraith">
+						<p class="card-car__old-price">79.000 руб/сутки</p>
+						<p class="card-car__new-price">49.000 руб/сутки</p>
+					</div>
+				</li>
+				<li class="section-conditions__cars-item">
+					<div class="card-car">
+						<h3 class="card-car__title">
+							Mercedes - Benz G
+						</h3>
+						<img class="card-car__img" width="275" height="195" src="" alt="Аренда Mercedes - Benz G">
+						<p class="card-car__old-price">54.000 руб/сутки</p>
+						<p class="card-car__new-price">29.000 руб/сутки</p>
+					</div>
+				</li>
+				<li class="section-conditions__cars-item">
+					<div class="card-car">
+						<h3 class="card-car__title">
+							Dodge Challenger SRT
+						</h3>
+						<img class="card-car__img" width="272" height="137" src="" alt="Аренда Dodge Challenger SRT">
+						<p class="card-car__old-price">20.000 руб/сутки</p>
+						<p class="card-car__new-price">11.900 руб/сутки</p>
+					</div>
+				</li>
+			</ul>
+			<div class="section-conditions__information">
+				<p class="section-conditions__information-title">
+					20+
+				</p>
+				<p class="section-conditions__information-description">
+					автомобилей в аренду со скидкой до 40%
+				</p>
+			</div>
+		</section>
+		<section class="section-choice">
+			<h2 class="section-choice__title">
+				Выберите подходящую карту
+			</h2>
+			<p class="section-choice__description">Выберите идеальную карту, соответствующую вашим потребностям. Получите эксклюзивные привилегии и выгоды при аренде автомобиля. Наслаждайтесь комфортом и удобством с нашими клубными картами.</p>
+			<div class="section-choice__content">
+				<!-- 
+					На момент разметки, блоки с переключением не реализовывал. Прикинул в голове и решил делать список всех карт, а далее их менять через js. Возможно, финальная разметка изменится по ходу реализации. 
+				-->
+				<ul class="section-choice__cards">
+					<li class="section-choice__card">
+						<!-- 
+							Лицевую и обратную стороны решил упаковать в упорядоченный список. Решил, что лицевая сторона всегда первая, обратная вторая. Не уверен в данном выборе. 
+						-->
+						<ol class="section-choice__card-container">
+							<li class="section-choice__card-container-face">
+								<div class="card-face">
+									<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+									<div class="card-face__name">
+										Efrosin Tarasov
+									</div>
+									<div class="card-face__type">
+										Premium
+									</div>
+									<div class="card-face__back"></div>
+								</div>
+							</li>
+							<li class="section-choice__card-container-reverse">
+								<div class="card-reverse">
+									<ul class="card-reverse__information-list">
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Размер депозита
+											</p>
+											<p class="card-reverse__information-item-value">
+												2 000 000 руб.
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Скидка на аренду
+											</p>
+											<p class="card-reverse__information-item-value">
+												40%
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Срок действия
+											</p>
+											<p class="card-reverse__information-item-value">
+												Без срока
+											</p>
+										</li>
+									</ul>
+									<img class="card-reverse__logo" src="" alt="Логотип автоклуба LOGO YO" width="198" height="22.5">
+									<!-- 
+										В обратной стороне карты также делаю кнопку тегом button, так как предполагается открытие модального окна 
+									-->
+									<button class="card-reverse__button" type="button">
+										Оформить карту
+									</button>
+								</div>
+							</li>
+						</ol>
+					</li>
+					<li class="section-choice__card">
+						<ol class="section-choice__card-container">
+							<li class="section-choice__card-container-face">
+								<div class="card-face">
+									<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+									<div class="card-face__name">
+										Anastasiya Zaytseva
+									</div>
+									<div class="card-face__type">
+										Gold
+									</div>
+									<div class="card-face__back"></div>
+								</div>
+							</li>
+							<li class="section-choice__card-container-reverse">
+								<div class="card-reverse">
+									<ul class="card-reverse__information-list">
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Размер депозита
+											</p>
+											<p class="card-reverse__information-item-value">
+												1 500 000 руб.
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Скидка на аренду
+											</p>
+											<p class="card-reverse__information-item-value">
+												30%
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Срок действия
+											</p>
+											<p class="card-reverse__information-item-value">
+												Без срока
+											</p>
+										</li>
+									</ul>
+									<img class="card-reverse__logo" src="" alt="Логотип автоклуба LOGO YO" width="198" height="22.5">
+									<button class="card-reverse__button" type="button">
+										Оформить карту
+									</button>
+								</div>
+							</li>
+						</ol>
+					</li>
+					<li class="section-choice__card">
+						<ol class="section-choice__card-container">
+							<li class="section-choice__card-container-face">
+								<div class="card-face">
+									<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+									<div class="card-face__name">
+										Sveta Kovaleva
+									</div>
+									<div class="card-face__type">
+										Silver
+									</div>
+									<div class="card-face__back"></div>
+								</div>
+							</li>
+							<li class="section-choice__card-container-reverse">
+								<div class="card-reverse">
+									<ul class="card-reverse__information-list">
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Размер депозита
+											</p>
+											<p class="card-reverse__information-item-value">
+												1 000 000 руб.
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Скидка на аренду
+											</p>
+											<p class="card-reverse__information-item-value">
+												20%
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Срок действия
+											</p>
+											<p class="card-reverse__information-item-value">
+												1 год
+											</p>
+										</li>
+									</ul>
+									<img class="card-reverse__logo" src="" alt="Логотип автоклуба LOGO YO" width="198" height="22.5">
+									<button class="card-reverse__button" type="button">
+										Оформить карту
+									</button>
+								</div>
+							</li>
+						</ol>
+					</li>
+					<li class="section-choice__card">
+						<ol class="section-choice__card-container">
+							<li class="section-choice__card-container-face">
+								<div class="card-face">
+									<img class="card-face__logo" src="" alt="Логотип автоклуба LOGO YO" width="116" height="17">
+									<div class="card-face__name">
+										Pyotr Kuznetsov
+									</div>
+									<div class="card-face__type">
+										Standard
+									</div>
+									<div class="card-face__back"></div>
+								</div>
+							</li>
+							<li class="section-choice__card-container-reverse">
+								<div class="card-reverse">
+									<ul class="card-reverse__information-list">
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Размер депозита
+											</p>
+											<p class="card-reverse__information-item-value">
+												500 000 руб.
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Скидка на аренду
+											</p>
+											<p class="card-reverse__information-item-value">
+												10%
+											</p>
+										</li>
+										<li class="card-reverse__information-item">
+											<p class="card-reverse__information-item-title">
+												Срок действия
+											</p>
+											<p class="card-reverse__information-item-value">
+												1 год
+											</p>
+										</li>
+									</ul>
+									<img class="card-reverse__logo" src="" alt="Логотип автоклуба LOGO YO" width="198" height="22.5">
+									<button class="card-reverse__button" type="button">
+										Оформить карту
+									</button>
+								</div>
+							</li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- 
+			Не могу четко сформулировать, но остановлюсь на том, что мне кажется, что крайний блок похож на блок с преимуществами, хоть и не прямой.
+
+			Если бы карточки содержали детальную информацию или информацию по каждому типу карт (премиум, голд ...), тогда я бы точно понял, что это один логический блок с выбором карты, но тут тезисы, которые относятся к компании и продукту в целом.
+
+			Карточки с преимуществами не имеют заголовка, но я все равно выделяю это как отдельный раздел, так как выбор карты - это самостоятельный логический блок, также как и перечисление преимуществ. Думаю, стоило бы добавить заголовок в блок с преимуществами, чтобы не было вопросов, что section не имеет h2. 
+		-->
+		<section class="section-advantages">
+			<ul class="section-advantages__cards">
+				<!-- 
+					Долго размышлял и пришел к выводу, сделаю 2 вида карточек, чтобы не было пустых тегов в разметке (в карточках без изображений отсутствует описание). Не уверен, что это как то влияет на поисковики, но тем не менее решаю перестраховаться.
+				
+					Изображения буду отображать через background, так как семантической значимости они для нас не несут и отсутствие alt не скажется на наших результатах.
+				-->
+				<li class="section-advantages__card-text">
+					<h3 class="section-advantages__card-text-title">
+						Элегантный подарок на любой случай.
+					</h3>
+				</li>
+				<li class="section-advantages__card">
+					<h3 class="section-advantages__card-title">
+						На новый год
+					</h3>
+					<p class="section-advantages__card-description">
+						Дарите незабываемые впечатления перед Новым годом.
+					</p>
+				</li>
+				<li class="section-advantages__card">
+					<h3 class="section-advantages__card-title">
+						На Выходные
+					</h3>
+					<p class="section-advantages__card-description">
+						Отличное дополнение для тех, кто ищет отдых.
+					</p>
+				</li>
+				<li class="section-advantages__card-text">
+					<h3 class="section-advantages__card-text-title">
+						Автомобили всегда чистые и заправленные.
+					</h3>
+				</li>
+				<li class="section-advantages__card">
+					<h3 class="section-advantages__card-title">
+						На день рождения
+					</h3>
+					<p class="section-advantages__card-description">
+						Эксклюзивное сюрпризное предложение для юбиляра.
+					</p>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="footer__head">
+			<!-- 
+				В футере не использую тег nav, так как находил информацию о том, что данный тег используется только в шапке. Возможно ошибаюсь, но делаю это целенаправленно. 
+			-->
+			<div class="footer__head-nav">
+				<!-- 
+					Описание компании и логотип кладу в ссылку, чтобы увеличить поверхности активной области для клика 
+				-->
+				<a class="footer__logo" href="/">
+					<img src="" alt="Логотип автоклуба LOGO YO" width="198" height="22.5">
+					<p class="footer__logo-description">
+						Аренда премиальных автомобилей в Москве
+					</p>
+				</a>
+				<ul class="main-menu">
+					<li class="main-menu__item">
+						<a class="main-menu__item-link" href="">
+							Автомобили
+						</a>
+					</li>
+					<li class="main-menu__item">
+						<a class="main-menu__item-link" href="">
+							Покупка авто
+						</a>
+					</li>
+					<li class="main-menu__item">
+						<a class="main-menu__item-link" href="">
+							Личная охрана
+						</a>
+					</li>
+					<li class="main-menu__item">
+						<a class="main-menu__item-link" href="">
+							Клубные карты
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 
+				В техническом задании указано, что приветствуется инициатива, поэтому в контактах убираю маленькие иконки телеграм и инстаграм, потому что они используются ниже в блоке "следите за нами". Двойное использование в одном логическом блоке, на мой взгляд, не является лучшим вариантом. 
+			-->
+			<address class="footer__contacts">
+				<ul class="footer__contacts-items">
+					<li class="footer__contacts-phone">
+								<p class="footer__contacts-phone-title">
+									Телефон
+								</p>
+								<a href="tel:+70000000000" class="footer__contacts-phone-value">
+									+7 (000) 000-00-00
+								</a>
+								<p class="footer__contacts-phone-description">
+									Работаем круглосуточно
+								</p>
+					</li>
+					<li class="footer__contacts-address">
+							<p class="footer__contacts-address-title">
+								Адрес
+							</p>
+							<p class="footer__contacts-address-description">
+								Москва, Проспект Вернадского 12д
+							</p>
+					</li>
+				</ul>
+			</address>
+		</div>
+		<div class="footer__connection">
+			<address class="footer__connection-socials">
+				<p class="footer__connection-socials-title">
+					Следите за нами
+				</p>
+				<ul class="footer__connection-socials-items">
+					<li class="footer__connection-socials-item">
+						<a class="footer__connection-socials-link" href="">
+							<svg class="telegram-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+								<path d="M20 3.33325C10.8 3.33325 3.33334 10.7999 3.33334 19.9999C3.33334 29.1999 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.1999 36.6667 19.9999C36.6667 10.7999 29.2 3.33325 20 3.33325ZM27.7333 14.6666C27.4833 17.2999 26.4 23.6999 25.85 26.6499C25.6167 27.8999 25.15 28.3166 24.7167 28.3666C23.75 28.4499 23.0167 27.7333 22.0833 27.1166C20.6167 26.1499 19.7833 25.5499 18.3667 24.6166C16.7167 23.5333 17.7833 22.9333 18.7333 21.9666C18.9833 21.7166 23.25 17.8333 23.3333 17.4833C23.3449 17.4302 23.3434 17.3752 23.3289 17.3229C23.3143 17.2706 23.2873 17.2227 23.25 17.1833C23.15 17.0999 23.0167 17.1333 22.9 17.1499C22.75 17.1833 20.4167 18.7333 15.8667 21.7999C15.2 22.2499 14.6 22.4833 14.0667 22.4666C13.4667 22.4499 12.3333 22.1333 11.4833 21.8499C10.4333 21.5166 9.61668 21.3333 9.68334 20.7499C9.71668 20.4499 10.1333 20.1499 10.9167 19.8333C15.7833 17.7166 19.0167 16.3166 20.6333 15.6499C25.2667 13.7166 26.2167 13.3833 26.85 13.3833C26.9833 13.3833 27.3 13.4166 27.5 13.5833C27.6667 13.7166 27.7167 13.8999 27.7333 14.0333C27.7167 14.1333 27.75 14.4333 27.7333 14.6666Z" fill="black"/>
+							</svg>
+						</a>
+						<p class="footer__connection-socials-name">
+							Telegram
+						</p>
+					</li>
+					<li class="footer__connection-socials-item">
+						<a class="footer__connection-socials-link" href="">
+							<svg class="instagram-icon" width="40" height="40" viewBox="0 0 40 40" fill="none">
+								<path d="M20 3.33325C10.8 3.33325 3.33334 10.7999 3.33334 19.9999C3.33334 29.1999 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.1999 36.6667 19.9999C36.6667 10.7999 29.2 3.33325 20 3.33325ZM27.7333 14.6666C27.4833 17.2999 26.4 23.6999 25.85 26.6499C25.6167 27.8999 25.15 28.3166 24.7167 28.3666C23.75 28.4499 23.0167 27.7333 22.0833 27.1166C20.6167 26.1499 19.7833 25.5499 18.3667 24.6166C16.7167 23.5333 17.7833 22.9333 18.7333 21.9666C18.9833 21.7166 23.25 17.8333 23.3333 17.4833C23.3449 17.4302 23.3434 17.3752 23.3289 17.3229C23.3143 17.2706 23.2873 17.2227 23.25 17.1833C23.15 17.0999 23.0167 17.1333 22.9 17.1499C22.75 17.1833 20.4167 18.7333 15.8667 21.7999C15.2 22.2499 14.6 22.4833 14.0667 22.4666C13.4667 22.4499 12.3333 22.1333 11.4833 21.8499C10.4333 21.5166 9.61668 21.3333 9.68334 20.7499C9.71668 20.4499 10.1333 20.1499 10.9167 19.8333C15.7833 17.7166 19.0167 16.3166 20.6333 15.6499C25.2667 13.7166 26.2167 13.3833 26.85 13.3833C26.9833 13.3833 27.3 13.4166 27.5 13.5833C27.6667 13.7166 27.7167 13.8999 27.7333 14.0333C27.7167 14.1333 27.75 14.4333 27.7333 14.6666Z" fill="black"/>
+							</svg>
+						</a>
+						<p class="footer__connection-socials-name">
+							Instagram
+						</p>
+					</li>
+				</ul>
+			</address>
+			<form class="footer__connection-form" action="" method="post">
+				<p class="footer__connection-form-title">
+					Остались вопросы ?
+				</p>
+				<p class="footer__connection-form-description">
+					Отправьте заявку и наш эксперт свяжется с Вами в ближайшее время
+				</p>
+				<label class="footer__connection-form-label" for="name">
+					Ваше имя
+				</label>
+				<input class="footer__connection-form-input" type="text" name="user_name" id="name">
+				<label class="footer__connection-form-label" for="tel">
+					Номер телефона
+				</label>
+				<input class="footer__connection-form-input" type="tel" name="user_tel" id="tel">
+				<button class="footer__connection-form-button">Отправить</button>
+			</form>
+		</div>
+		<div class="footer__copyright">
+			<p class="footer__copyright-rights">
+				LOGO YO all Rights
+			</p>
+			<ul class="footer__copyright-links">
+				<li class="footer__copyright-link">
+					<a class="footer__copyright-privacy" href="">
+						Политика конфиденциальности
+					</a>
+				</li>
+				<li class="footer__copyright-link">
+					<a class="footer__copyright-dev" href="">
+						Дизайн и разработка - AA
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>
