@@ -62,19 +62,34 @@ $shadow-card-face: 0px 0px 50px 0px rgba(0, 0, 0, 0.30);
 $color-telegram-active: #00D1FF;
 $color-instagram-active: #C0274C;
 
-//Размеры
-
-//Размер общего контейнера
-$size-container: 1440px;
+//Тень для ховер эффектов
+$shadow-hover:
+0 0 5px $color-text,
+0 0 10px $color-blocks;
 
 
 //Создаю миксины
 
-@mixin container($property) {
-  max-width: $property;
+//Общий контейнер
+@mixin container() {
+  max-width: 1440px;
   margin: 0 auto;
 }
 
+//Ховер кнопок
+@mixin hoverButton() {
+	text-shadow: $shadow-hover;
+}
+
+//Ховер боксов
+@mixin hoverBox() {
+	box-shadow: $shadow-hover;
+}
+
+//Transition круглых кнопок
+@mixin transitionButton($cubic) {
+	transition: 0.4s $cubic;
+}
 
 
 //Задаю общие стили
@@ -93,6 +108,8 @@ html {
 	color: $color-text;
 
 	background-color: $color-background;
+
+	scroll-behavior: smooth; //Плавная прокрутка до якоря
 }
 
 h1, h2, h3 {
@@ -117,9 +134,7 @@ svg *[stroke] {
 	stroke: currentColor;
 }
 
-//В макете Дизайнер так и грешит изменением ширины текстового контейнера для красоты. Если я буду менять ширину контейнеров, тогда, при желании изменить информацию, заказчик будет получать непонятные переносы в одинаковых блоках. Так H2 заголовок секции тарифов имеет ширину 1080. А вот секция выбором карт 1020, почему? А если заказчик завтра захочет "Выберите подходящую супер карту только под Ваши задачи"? Тогда мы получим разные отступы.
-
-// Секции не так критичны, как карточки под выбором карты. Почему-то карточка элегантный подарок и автомобили всегда чистые имеют разную ширину текста. Это как? Два абсолютно идентичных, в плане дизайна, блока будут по разному отображать вводимую информацию. Изменить ширину мне - не сложно. Но я верстаю адаптивный макет, который готов к переполнению, и если очень хочется, то я могу добавить тег <br> и все будет красиво.
+// В макете Дизайнер так и грешит изменением ширины текстового контейнера для красоты. Если я буду менять ширину контейнеров, тогда, при желании изменить информацию, заказчик будет получать непонятные переносы в одинаковых блоках. Так H2 заголовок секции тарифов имеет ширину 1080. А вот секция выбором карт 1020, почему? А если заказчик завтра захочет "Выберите подходящую супер карту только под Ваши задачи"? Тогда мы получим разные отступы. Секции не так критичны, как карточки под выбором карты. Почему-то карточка элегантный подарок и автомобили всегда чистые имеют разную ширину текста. Это как? Два абсолютно идентичных, в плане дизайна, блока будут по разному отображать вводимую информацию. Изменить ширину мне - не сложно. Но я верстаю адаптивный макет, который готов к переполнению, и если очень хочется, то я могу добавить тег <br> и все будет красиво.
 
 //Стили для основного меню
 
@@ -160,22 +175,9 @@ svg *[stroke] {
 		position: relative;
 	}
 
-	.main-menu__item-link::after {
-		content: "";
-
-		position: absolute;
-		top: 100%;
-		left: 0;
-		width: 0%;
-
-		border-bottom: 2px solid $color-text;
-		transition: 0.2s;
+	.main-menu__item-link:hover {
+		@include hoverButton();
 	}
-
-	.main-menu__item-link:hover::after {
-		width: 100%;
-	}
-
 }
 
 .header {
@@ -241,6 +243,9 @@ svg *[stroke] {
 
 	.card-face__container {
 		zoom: 0.6515;
+	}
+
+	.card-face__back {
 	}
 }
 
@@ -350,8 +355,6 @@ svg *[stroke] {
 .card-face__back,
 .card-reverse__back {
 	position: absolute;
-	bottom: 0;
-	left: 320px;
 
 	border-radius: 20px;
 
@@ -362,10 +365,17 @@ svg *[stroke] {
 	width: 420px;
 	height: 420px;
 	
+	transform-origin: center;
 	transform: rotate(30deg);
+
+	left: 330px;
+	bottom: 30px;
 }
 
 .card-reverse__back {
+	bottom: 0;
+	left: 320px;
+
 	width: 320px;
 	height: 366px;
 }
@@ -466,6 +476,10 @@ svg *[stroke] {
 	cursor: pointer;
 }
 
+.card-reverse__button:hover {
+	@include hoverBox();
+}
+
 //Cтили для карточек с авто
 
 .card-car {
@@ -528,7 +542,7 @@ svg *[stroke] {
 
 	padding: 0 60px;
 
-	@include container($size-container);
+	@include container();
 }
 
 .header__nav {
@@ -559,7 +573,7 @@ svg *[stroke] {
 }
 
 .header__nav-button-connect:hover {
-	background-color: $color-hover;
+	@include hoverBox();
 }
 
 
@@ -586,7 +600,7 @@ svg *[stroke] {
 	padding-left: 60px;
 	padding-right: 80px;
 
-	@include container($size-container);
+	@include container();
 }
 
 .section-main__left-container {
@@ -625,31 +639,74 @@ svg *[stroke] {
 	text-decoration: none;
 	color: $color-text;
 	font-size: 1.8rem;
+	line-height: 28px;
+	text-transform: capitalize;
 
-	padding: 86px 17px;
+	padding: 84px 17.5px;
+
 	margin-right: 40px;
 
-	border: 2px solid $color-text;
 	border-radius: 50%;
 
 	position: relative;
 }
 
-// .section-main__button-action::before {
-// 	content: "";
+.section-main__button-action:hover {
+	@include hoverButton();
+}
 
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	right: 0;
-// 	bottom: 0;
+.section-main__button-action::before {
+	content: "";
 
-// 	width: 195px;
-// 	height: 195px;
+	position: absolute;
+	top: -2px;
+	left: -2px;
 
-// 	border: 2px solid $color-text;
-// 	border-radius: 50%;
-// }
+	width: 196px;
+	height: 196px;
+
+	border: 2px solid $color-text;
+	border-radius: 50%;
+
+	@include transitionButton(cubic-bezier( 0.175, 0.885, 0.32, 1.275 ));
+}
+
+.section-main__button-action:hover::before {
+	top: 150px;
+	left: 47.5px;
+
+	width: 100px;
+	height: 100px;
+}
+
+.section-main__button-action::after {
+	content: "";
+
+	position: absolute;
+	top: 23.5px;
+	left: 47.5px;
+
+	width: 100px;
+	height: 100px;
+
+	border-left: 0.1px solid transparent;
+	border-bottom: 0.1px solid transparent;
+
+	transform: rotate(-45deg);
+
+	@include transitionButton(cubic-bezier( 0.175, 0.885, 0.32, 1.275 ));
+}
+
+.section-main__button-action:hover::after {
+	top: 173.5px;
+	left: 77.5px;
+
+	width: 40px;
+	height: 40px;
+
+	border-left: 2px solid $color-text;
+	border-bottom: 2px solid $color-text;
+}
 
 .section-main__card {
 	position: relative;
@@ -669,7 +726,7 @@ svg *[stroke] {
 	padding-left: 60px;
 	padding-right: 97px;
 
-	@include container($size-container);
+	@include container();
 }
 
 .section-conditions__content {
@@ -752,7 +809,7 @@ svg *[stroke] {
 
 	width: 100%;
 
-	@include container($size-container);
+	@include container();
 }
 
 .section-choice__header {
@@ -943,7 +1000,7 @@ svg *[stroke] {
 .footer__head-container,
 .footer__connection-container,
 .footer__copyright-container {
-	@include container($size-container);
+	@include container();
 }
 
 .footer__head-container {
@@ -1006,15 +1063,31 @@ svg *[stroke] {
 }
 
 .footer__contacts-phone-value {
+	text-decoration: none;
+
 	font-size: 2.4rem;
 	color: $color-text;
-	text-decoration: none;
 }
 
-.footer__contacts-phone-description,
-.footer__contacts-address-description {
+.footer__contacts-phone-value:hover {
+	@include hoverButton();
+}
+
+.footer__contacts-phone-description {
 	font-size: 1.8rem;
 	line-height: 28px;
+}
+
+.footer__contacts-address-value {
+	text-decoration: none;
+
+	font-size: 1.8rem;
+	color: $color-text;
+	line-height: 28px;
+}
+
+.footer__contacts-address-value:hover {
+	@include hoverButton();
 }
 
 .footer__connection-container {
@@ -1179,39 +1252,83 @@ svg *[stroke] {
 	align-items: center;
 	justify-content: center;
 
+	width: 170px;
+	height: 170px;
+
 	font-family: $font-description;
 	font-weight: $font-description-weight;
 	font-size: 1.6rem;
 	line-height: 24px;
 	color: $color-text;
 
-	padding: 72px 36px;
-
-	border: 2px solid $color-text;
 	border-radius: 50%;
 
 	cursor: pointer;
 
 	position: relative;
-
-	transition: 0.2s;
 }
 
-// .footer__connection-form-button::before {
-// 	content: "";
+.footer__connection-form-button:hover {
+	@include hoverButton();
+}
 
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	right: 0;
-// 	bottom: 0;
+.footer__connection-form-button::before {
+	content: "";
 
-// 	width: 170px;
-// 	height: 170px;
+	position: absolute;
+	top: -2px;
+	left: -2px;
 
-// 	border: 2px solid $color-text;
-// 	border-radius: 50%;
-// }
+	width: 166px;
+	height: 166px;
+
+	border: 2px solid $color-text;
+	border-radius: 50%;
+
+	@include transitionButton(ease);
+}
+
+.footer__connection-form-button::after {
+	content: "";
+
+	position: absolute;
+	top: -2px;
+	left: -2px;
+
+	width: 166px;
+	height: 166px;
+
+	border-left: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	border-radius: 50%;
+
+	@include transitionButton(ease);
+}
+
+.footer__connection-form-button:hover::before {
+	top: -48px;
+	left: 108px;
+
+	width: 66px;
+	height: 66px;
+
+	border-radius: 10px;
+}
+
+.footer__connection-form-button:hover::after {
+	top: -58.67px;
+	left: 118.67px;
+
+	width: 46.67px;
+	height: 46.67px;
+
+	border-left: 2px solid $color-text;
+	border-bottom: 2px solid $color-text;
+	border-radius: 0;
+	border-bottom-left-radius: 10px;
+
+	transform: rotate(-45deg);
+}
 
 .footer__copyright-container {
 	display: flex;
@@ -1253,4 +1370,9 @@ svg *[stroke] {
 	text-transform: capitalize;
 	color: $color-text;
 	text-align: center;
+}
+
+.footer__copyright-privacy:hover,
+.footer__copyright-dev:hover {
+	@include hoverButton();
 }
